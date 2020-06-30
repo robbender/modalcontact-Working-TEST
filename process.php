@@ -14,7 +14,8 @@ echo "<stong>Name:</strong> ".$name."<br>";
 echo "<stong>Email:</strong> ".$email."<br>";
 echo "<stong>Message:</strong> ".$message."<br>";
 echo "<br />";
-echo "<a  class=\"btn btn-primary\" href='".$link_address."'>Back</a>";
+// echo "<a  class=\"btn btn-primary\" href='".$link_address."'>Back</a>";
+
 
 $to = $myemail;
 $email_subject = "Contact form submission: $name";
