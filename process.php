@@ -6,7 +6,7 @@ $email = strip_tags($_POST['email']);
 $message = strip_tags($_POST['message']);
 $link_address = "index.html";
 
-$success = "<div class=\"alert alert-success\" ><strong>Your message has been received.</strong> \r\n
+$success = "<div class=\"alert alert-success\" ><strong>Your message is on the way!</strong> \r\n
 Thank you for getting in touch! We appreciate you contacting us $name. One of our colleagues will get back in touch with you soon! \r\n
 Here is what you submitted:</div><br><br>";
 
