@@ -31,4 +31,10 @@ $(document).ready(function() {
               });
 
       });
+
+      // $("#form-content").change(function () {
+      //       $("#response").modal("hide");
+      //       $("#input#submit").modal("show");
+      //
+      //   });
 });

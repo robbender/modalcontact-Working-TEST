@@ -6,9 +6,21 @@ $email = strip_tags($_POST['email']);
 $message = strip_tags($_POST['message']);
 $link_address = "index.html";
 
-echo "<div class=\"alert alert-success\" ><strong>Your message has been received.</strong> \r\n
+$success = "<div class=\"alert alert-success\" ><strong>Your message has been received.</strong> \r\n
 Thank you for getting in touch! We appreciate you contacting us $name. One of our colleagues will get back in touch with you soon! \r\n
 Here is what you submitted:</div><br><br>";
+
+$failure = "<div class=\"alert alert-danger\" ><strong>Please fillout the required fields.</strong> \r\n
+You may also call us at: 555-867-5309. If we are unavailable one of our colleagues will get back in touch with you soon! \r\n
+Here is what you submitted:</div><br><br>";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($name) || empty($email) || empty($message)) {
+    echo $failure;
+  } else {
+    echo $success;
+  }
+}
 
 echo "<stong>Name:</strong> ".$name."<br>";
 echo "<stong>Email:</strong> ".$email."<br>";
