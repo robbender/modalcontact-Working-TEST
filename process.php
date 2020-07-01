@@ -8,11 +8,11 @@ $link_address = "index.html";
 
 $success = "<div class=\"alert alert-success\" ><strong>Your message is on the way!</strong><br>
 Thank you for getting in touch! We appreciate you contacting us $name. One of our colleagues will get back in touch with you soon!<br /><br />
-Here is what you submitted:</div><br><br>";
+Here is what you submitted:</div><br>";
 
 $failure = "<div class=\"alert alert-danger\" ><strong>Please fillout the required fields.</strong><br>
 You may also call us at: 555-867-5309. If we are unavailable one of our colleagues will get back in touch with you soon! <br><br>\r\n
-Here is what you submitted:</div><br><br>";
+Here is what you submitted:</div><br>";
 
 $noName = "<strong><i>No name provided.</i></strong>";
 $noEmail = "<strong><i>No email provided.</i></strong>";
