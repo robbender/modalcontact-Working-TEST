@@ -27,7 +27,8 @@ $(document).ready(function() {
               .on('hidden.bs.modal', function (e) {
                   $('#response').modal('show');
 
-                  $(this).off('hidden.bs.modal'); // Remove the 'on' event binding
+                  $(this).off('hidden.bs.modal') // Remove the 'on' event binding
+                  .find('form')[0].reset();
               });
 
       });

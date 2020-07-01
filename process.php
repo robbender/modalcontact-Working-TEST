@@ -6,28 +6,49 @@ $email = strip_tags($_POST['email']);
 $message = strip_tags($_POST['message']);
 $link_address = "index.html";
 
-$success = "<div class=\"alert alert-success\" ><strong>Your message is on the way!</strong> \r\n
-Thank you for getting in touch! We appreciate you contacting us $name. One of our colleagues will get back in touch with you soon! \r\n
+$success = "<div class=\"alert alert-success\" ><strong>Your message is on the way!</strong><br>
+Thank you for getting in touch! We appreciate you contacting us $name. One of our colleagues will get back in touch with you soon!<br /><br />
 Here is what you submitted:</div><br><br>";
 
-$failure = "<div class=\"alert alert-danger\" ><strong>Please fillout the required fields.</strong> \r\n
-You may also call us at: 555-867-5309. If we are unavailable one of our colleagues will get back in touch with you soon! \r\n
+$failure = "<div class=\"alert alert-danger\" ><strong>Please fillout the required fields.</strong><br>
+You may also call us at: 555-867-5309. If we are unavailable one of our colleagues will get back in touch with you soon! <br><br>\r\n
 Here is what you submitted:</div><br><br>";
 
+$noName = "<strong><i>No name provided.</i></strong>";
+$noEmail = "<strong><i>No email provided.</i></strong>";
+$noMessage = "<strong><i>No message provided.</i></strong>";
+
+//Check if field is empty
+
+if (empty($name)) {
+  $name = $noName;
+};
+
+if (empty($email)) {
+  $email = $noEmail;
+};
+
+if (empty($message)) {
+  $message = $noMessage;
+};
+
+$info = "<div class=\"alert alert-secondary\" ><stong>Name:</strong> $name <br>
+              <stong>Email:</strong> $email <br>
+              <stong>Message:</strong> $message<br>
+              <br />
+          </div>";
+// echo "<a  class=\"btn btn-primary\" href='".$link_address."'>Back</a>";
+
+// Response to form
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($name) || empty($email) || empty($message)) {
-    echo $failure;
+  if ($name===$noName || $email===$noEmail || $message===$noMessage) {
+    echo $failure, $info;
   } else {
-    echo $success;
+    echo $success, $info;
   }
 }
 
-echo "<stong>Name:</strong> ".$name."<br>";
-echo "<stong>Email:</strong> ".$email."<br>";
-echo "<stong>Message:</strong> ".$message."<br>";
-echo "<br />";
-// echo "<a  class=\"btn btn-primary\" href='".$link_address."'>Back</a>";
-
+// Receiving Email Message Format
 
 $to = $myemail;
 $email_subject = "Contact form submission: $name";
